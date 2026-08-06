@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shop luxury fashion at Luxe Atelier. Browse our collection of premium clothing, shoes, and accessories.">
+    <title>Shop | Luxe Atelier</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+<base target="_blank">
+</head>
+<body>
+    <!-- Page Loader -->
+    <div class="page-loader" aria-hidden="true">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <div class="container nav-inner">
+            <a href="index.html" class="nav-logo" aria-label="Luxe Atelier Home">Luxe Atelier</a>
+
+            <ul class="nav-links" role="menubar">
+                <li role="none"><a href="index.html" class="nav-link" role="menuitem">Home</a></li>
+                <li role="none"><a href="products.html" class="nav-link active" role="menuitem">Shop</a></li>
+                <li role="none"><a href="products.html?gender=women" class="nav-link" role="menuitem">Women</a></li>
+                <li role="none"><a href="products.html?gender=men" class="nav-link" role="menuitem">Men</a></li>
+                <li role="none"><a href="products.html?category=accessories" class="nav-link" role="menuitem">Accessories</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="nav-btn search-toggle" aria-label="Search">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+                <a href="#" class="nav-btn" aria-label="Wishlist">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                </a>
+                <button class="nav-btn cart-toggle" aria-label="Shopping cart">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+                <a href="#" class="nav-btn" aria-label="Account">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </a>
+                <button class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" role="dialog" aria-label="Mobile menu" aria-hidden="true">
+        <div class="mobile-menu-header">
+            <span class="nav-logo">Luxe Atelier</span>
+            <button class="mobile-menu-close" aria-label="Close menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <ul class="mobile-menu-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Shop All</a></li>
+            <li><a href="products.html?gender=women">Women</a></li>
+            <li><a href="products.html?gender=men">Men</a></li>
+            <li><a href="products.html?category=new">New Arrivals</a></li>
+            <li><a href="products.html?category=sale">Sale</a></li>
+        </ul>
+    </div>
+    <div class="mobile-overlay"></div>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" role="dialog" aria-label="Search" aria-hidden="true">
+        <button class="search-close" aria-label="Close search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <form class="search-form" action="products.html" method="get">
+            <input type="search" name="q" class="search-input" placeholder="Search products..." aria-label="Search products" autocomplete="off">
+        </form>
+    </div>
+
+    <!-- Cart Drawer -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-label="Shopping cart">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="cart-close" aria-label="Close cart">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <div class="cart-empty">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#777" stroke-width="1">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+                <p>Your cart is empty</p>
+                <a href="products.html" class="btn btn-outline">Continue Shopping</a>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-subtotal-row">
+                <span>Subtotal</span>
+                <span id="cart-subtotal">USh 0.00</span>
+            </div>
+            <p class="cart-note">Shipping and taxes calculated at checkout</p>
+            <button class="btn btn-dark cart-checkout-btn">Checkout</button>
+        </div>
+    </aside>
+
+    <!-- Product Detail View (hidden by default) -->
+    <div id="product-detail-view" style="display: none;">
+        <div class="container">
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+                <a href="index.html">Home</a> <span>/</span>
+                <a href="products.html">Shop</a> <span>/</span>
+                <span id="breadcrumb-product">Product</span>
+            </nav>
+            <div class="product-detail">
+                <div class="product-gallery">
+                    <div class="product-gallery-main">
+                        <img id="detail-main-image" src="" alt="" loading="eager">
+                    </div>
+                    <div class="product-gallery-thumbs" id="detail-thumbs">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+                <div class="product-info-detail">
+                    <p class="product-category" id="detail-category"></p>
+                    <h1 id="detail-name"></h1>
+                    <div class="product-rating" id="detail-rating"></div>
+                    <div class="product-price" id="detail-price"></div>
+                    <p class="product-description" id="detail-description"></p>
+
+                    <div class="product-options">
+                        <div class="option-group">
+                            <label>Color</label>
+                            <div class="color-options" id="detail-colors"></div>
+                        </div>
+                        <div class="option-group">
+                            <label>Size</label>
+                            <div class="size-options" id="detail-sizes"></div>
+                        </div>
+                        <div class="option-group">
+                            <label>Quantity</label>
+                            <div class="quantity-selector">
+                                <button type="button" id="qty-decrease">−</button>
+                                <input type="number" id="qty-input" value="1" min="1" max="10" readonly>
+                                <button type="button" id="qty-increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-actions">
+                        <button class="btn btn-dark" id="add-to-cart-btn">Add to Cart</button>
+                        <a href="#" class="btn btn-outline whatsapp-btn" id="whatsapp-btn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            Buy via WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+            <section class="related-products" aria-labelledby="related-heading">
+                <h3 id="related-heading" class="section-title" style="text-align: center; margin-bottom: 2rem;">You May Also Like</h3>
+                <div class="products-grid" id="related-products-grid"></div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Products Listing View -->
+    <div id="products-listing-view">
+        <div class="container">
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+                <a href="index.html">Home</a> <span>/</span>
+                <span id="listing-breadcrumb">All Products</span>
+            </nav>
+
+            <div class="products-page">
+                <!-- Filters Sidebar -->
+                <aside class="filters-sidebar" aria-label="Product filters">
+                    <div class="filter-group">
+                        <h4>Category</h4>
+                        <div class="filter-options" id="filter-categories">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <h4>Gender</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="radio" name="gender" value="all" checked>
+                                <span>All</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="gender" value="women">
+                                <span>Women</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="radio" name="gender" value="men">
+                                <span>Men</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <h4>Price Range</h4>
+                        <div class="price-range">
+                            <input type="number" id="price-min" placeholder="Min" min="0">
+                            <span>—</span>
+                            <input type="number" id="price-max" placeholder="Max" min="0">
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <h4>Availability</h4>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" id="filter-sale">
+                                <span>On Sale</span>
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" id="filter-stock" checked>
+                                <span>In Stock</span>
+                            </label>
+                        </div>
+                    </div>
+                    <button class="btn btn-outline" id="clear-filters" style="width: 100%;">Clear Filters</button>
+                </aside>
+
+                <!-- Products Grid -->
+                <div>
+                    <div class="products-header">
+                        <p class="products-count" id="products-count">Showing all products</p>
+                        <div class="products-sort">
+                            <label for="sort-select" class="sr-only">Sort by</label>
+                            <select id="sort-select">
+                                <option value="featured">Featured</option>
+                                <option value="newest">Newest</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="rating">Best Rated</option>
+                                <option value="name">Name</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="products-grid" id="products-grid">
+                        <!-- Populated by JS -->
+                    </div>
+                    <div class="pagination" id="pagination">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3 class="footer-logo">Luxe Atelier</h3>
+                    <p>Where elegance meets modernity. Discover premium fashion crafted with care and designed for the discerning individual.</p>
+                    <div class="footer-social"></div>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Collections</h4>
+                    <ul>
+                        <li><a href="products.html?gender=women">Women</a></li>
+                        <li><a href="products.html?gender=men">Men</a></li>
+                        <li><a href="products.html?category=accessories">Accessories</a></li>
+                        <li><a href="products.html?category=sale">Sale</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Store Hours</h4>
+                    <div class="footer-hours"></div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Luxe Atelier. All rights reserved.</p>
+                <p>Designed with passion for fashion.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="19" x2="12" y2="5"></line>
+            <polyline points="5 12 12 5 19 12"></polyline>
+        </svg>
+    </button>
+
+    <!-- Scripts -->
+    <script src="data/products.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/site.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        // Products page-specific initialization
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('product');
+            const searchQuery = urlParams.get('q');
+            const categoryFilter = urlParams.get('category');
+            const genderFilter = urlParams.get('gender');
+
+            // If viewing a single product
+            if (productId) {
+                showProductDetail(productId);
+            } else {
+                showProductListing(searchQuery, categoryFilter, genderFilter);
+            }
+        });
+
+        function showProductDetail(productId) {
+            const product = productManager.getProductById(productId);
+            if (!product) {
+                showProductListing();
+                return;
+            }
+
+            document.getElementById('products-listing-view').style.display = 'none';
+            document.getElementById('product-detail-view').style.display = 'block';
+            document.title = `${product.name} | Luxe Atelier`;
+
+            // Populate product details
+            document.getElementById('breadcrumb-product').textContent = product.name;
+            document.getElementById('detail-category').textContent = product.category;
+            document.getElementById('detail-name').textContent = product.name;
+            document.getElementById('detail-rating').innerHTML = productManager.renderStars(product.rating);
+
+            const isOnSale = product.salePrice !== null;
+            document.getElementById('detail-price').innerHTML = `
+                <span class="current-price">USh ${(product.salePrice || product.price).toFixed(2)}</span>
+                ${isOnSale ? `<span class="original-price">USh ${product.price.toFixed(2)}</span>` : ''}
+            `;
+
+            document.getElementById('detail-description').textContent = product.description;
+            document.getElementById('detail-main-image').src = product.images[0];
+            document.getElementById('detail-main-image').alt = product.name;
+
+            // Thumbnails
+            const thumbsContainer = document.getElementById('detail-thumbs');
+            thumbsContainer.innerHTML = product.images.map((img, i) => `
+                <img src="${img}" alt="${product.name} ${i + 1}" class="${i === 0 ? 'active' : ''}" data-index="${i}" loading="lazy">
+            `).join('');
+
+            thumbsContainer.querySelectorAll('img').forEach(thumb => {
+                thumb.addEventListener('click', () => {
+                    thumbsContainer.querySelectorAll('img').forEach(t => t.classList.remove('active'));
+                    thumb.classList.add('active');
+                    document.getElementById('detail-main-image').src = thumb.src;
+                });
+            });
+
+            // Colors
+            const colorsContainer = document.getElementById('detail-colors');
+            colorsContainer.innerHTML = product.colors.map((color, i) => `
+                <button class="color-option ${i === 0 ? 'active' : ''}" data-color="${color}" title="${color}" 
+                    style="background: ${getColorHex(color)};" aria-label="Select ${color}"></button>
+            `).join('');
+
+            colorsContainer.querySelectorAll('.color-option').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    colorsContainer.querySelectorAll('.color-option').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                });
+            });
+
+            // Sizes
+            const sizesContainer = document.getElementById('detail-sizes');
+            sizesContainer.innerHTML = product.sizes.map((size, i) => `
+                <button class="size-option ${i === 0 ? 'active' : ''}" data-size="${size}">${size}</button>
+            `).join('');
+
+            sizesContainer.querySelectorAll('.size-option').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    sizesContainer.querySelectorAll('.size-option').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                });
+            });
+
+            // Quantity
+            const qtyInput = document.getElementById('qty-input');
+            document.getElementById('qty-decrease').addEventListener('click', () => {
+                if (qtyInput.value > 1) qtyInput.value--;
+            });
+            document.getElementById('qty-increase').addEventListener('click', () => {
+                if (qtyInput.value < 10) qtyInput.value++;
+            });
+
+            // Add to cart
+            document.getElementById('add-to-cart-btn').addEventListener('click', () => {
+                const selectedColor = colorsContainer.querySelector('.color-option.active')?.dataset.color || product.colors[0];
+                const selectedSize = sizesContainer.querySelector('.size-option.active')?.dataset.size || product.sizes[0];
+                const quantity = parseInt(qtyInput.value);
+                cart.addItem(product, selectedSize, selectedColor, quantity);
+            });
+
+            // WhatsApp
+            const whatsappBtn = document.getElementById('whatsapp-btn');
+            const message = encodeURIComponent(`Hi, I'm interested in purchasing: ${product.name} (${product.colors[0]}, ${product.sizes[0]})`);
+            whatsappBtn.href = `https://wa.me/${STORE_CONFIG.whatsapp}?text=${message}`;
+
+            // Related products
+            const related = productManager.getRelatedProducts(productId, 4);
+            productManager.renderProductGrid(related, 'related-products-grid');
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showProductListing(searchQuery, categoryFilter, genderFilter) {
+            document.getElementById('product-detail-view').style.display = 'none';
+            document.getElementById('products-listing-view').style.display = 'block';
+
+            let products = productManager.getAllProducts();
+            let breadcrumbText = 'All Products';
+
+            // Apply URL filters
+            if (searchQuery) {
+                products = productManager.searchProducts(searchQuery);
+                breadcrumbText = `Search: "${searchQuery}"`;
+                document.title = `Search: ${searchQuery} | Luxe Atelier`;
+            } else if (categoryFilter) {
+                if (categoryFilter === 'sale') {
+                    products = products.filter(p => p.salePrice !== null);
+                    breadcrumbText = 'Sale';
+                } else if (categoryFilter === 'new') {
+                    products = productManager.getNewArrivals(100);
+                    breadcrumbText = 'New Arrivals';
+                } else if (categoryFilter === 'accessories') {
+                    const accessoryCats = ['watches', 'bags', 'jewelry', 'sunglasses', 'belts', 'hats', 'perfumes'];
+                    products = products.filter(p => accessoryCats.includes(p.category));
+                    breadcrumbText = 'Accessories';
+                } else {
+                    products = productManager.getProductsByCategory(categoryFilter);
+                    breadcrumbText = categoryFilter.charAt(0).toUpperCase() + categoryFilter.slice(1);
+                }
+                document.title = `${breadcrumbText} | Luxe Atelier`;
+            } else if (genderFilter) {
+                products = productManager.getProductsByGender(genderFilter);
+                breadcrumbText = genderFilter.charAt(0).toUpperCase() + genderFilter.slice(1);
+                document.title = `${breadcrumbText} | Luxe Atelier`;
+            }
+
+            document.getElementById('listing-breadcrumb').textContent = breadcrumbText;
+
+            // Populate category filters
+            const categoryFilters = document.getElementById('filter-categories');
+            const categories = [...new Set(productManager.getAllProducts().map(p => p.category))].sort();
+            categoryFilters.innerHTML = `
+                <label class="filter-option">
+                    <input type="radio" name="category" value="all" checked>
+                    <span>All Categories</span>
+                </label>
+            ` + categories.map(cat => `
+                <label class="filter-option">
+                    <input type="radio" name="category" value="${cat}">
+                    <span>${cat.charAt(0).toUpperCase() + cat.slice(1)}</span>
+                </label>
+            `).join('');
+
+            // Set initial filters
+            if (categoryFilter && categoryFilter !== 'sale' && categoryFilter !== 'new' && categoryFilter !== 'accessories') {
+                const catInput = categoryFilters.querySelector(`input[value="${categoryFilter}"]`);
+                if (catInput) catInput.checked = true;
+            }
+            if (genderFilter) {
+                const genderInput = document.querySelector(`input[name="gender"][value="${genderFilter}"]`);
+                if (genderInput) genderInput.checked = true;
+            }
+
+            productManager.filteredProducts = products;
+            renderProductsPage();
+            setupFilters();
+        }
+
+        function renderProductsPage() {
+            const paginated = productManager.getPaginatedProducts();
+            productManager.renderProductGrid(paginated.products, 'products-grid');
+
+            // Update count
+            const start = (paginated.currentPage - 1) * productManager.itemsPerPage + 1;
+            const end = Math.min(start + paginated.products.length - 1, paginated.total);
+            document.getElementById('products-count').textContent = 
+                paginated.total > 0 ? `Showing ${start}-${end} of ${paginated.total} products` : 'No products found';
+
+            // Render pagination
+            const pagination = document.getElementById('pagination');
+            if (paginated.totalPages > 1) {
+                let html = `
+                    <button ${paginated.currentPage === 1 ? 'disabled' : ''} data-page="${paginated.currentPage - 1}">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                `;
+
+                for (let i = 1; i <= paginated.totalPages; i++) {
+                    html += `<button class="${i === paginated.currentPage ? 'active' : ''}" data-page="${i}">${i}</button>`;
+                }
+
+                html += `
+                    <button ${paginated.currentPage === paginated.totalPages ? 'disabled' : ''} data-page="${paginated.currentPage + 1}">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                `;
+
+                pagination.innerHTML = html;
+
+                pagination.querySelectorAll('button:not([disabled])').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const page = parseInt(btn.dataset.page);
+                        productManager.getPaginatedProducts(page);
+                        renderProductsPage();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    });
+                });
+            } else {
+                pagination.innerHTML = '';
+            }
+        }
+
+        function setupFilters() {
+            const applyFilters = () => {
+                const category = document.querySelector('input[name="category"]:checked')?.value || 'all';
+                const gender = document.querySelector('input[name="gender"]:checked')?.value || 'all';
+                const minPrice = document.getElementById('price-min').value;
+                const maxPrice = document.getElementById('price-max').value;
+                const onSale = document.getElementById('filter-sale').checked;
+                const inStock = document.getElementById('filter-stock').checked;
+
+                productManager.filterProducts({
+                    category,
+                    gender,
+                    minPrice,
+                    maxPrice,
+                    onSale,
+                    inStock
+                });
+
+                const sortBy = document.getElementById('sort-select').value;
+                productManager.sortProducts(sortBy);
+                renderProductsPage();
+            };
+
+            // Filter change listeners
+            document.querySelectorAll('input[name="category"]').forEach(input => {
+                input.addEventListener('change', applyFilters);
+            });
+            document.querySelectorAll('input[name="gender"]').forEach(input => {
+                input.addEventListener('change', applyFilters);
+            });
+            document.getElementById('price-min').addEventListener('input', debounce(applyFilters, 300));
+            document.getElementById('price-max').addEventListener('input', debounce(applyFilters, 300));
+            document.getElementById('filter-sale').addEventListener('change', applyFilters);
+            document.getElementById('filter-stock').addEventListener('change', applyFilters);
+
+            // Sort
+            document.getElementById('sort-select').addEventListener('change', () => {
+                productManager.sortProducts(document.getElementById('sort-select').value);
+                renderProductsPage();
+            });
+
+            // Clear filters
+            document.getElementById('clear-filters').addEventListener('click', () => {
+                document.querySelector('input[name="category"][value="all"]').checked = true;
+                document.querySelector('input[name="gender"][value="all"]').checked = true;
+                document.getElementById('price-min').value = '';
+                document.getElementById('price-max').value = '';
+                document.getElementById('filter-sale').checked = false;
+                document.getElementById('filter-stock').checked = true;
+                applyFilters();
+            });
+        }
+
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        function getColorHex(colorName) {
+            const colorMap = {
+                'black': '#111111', 'white': '#FFFFFF', 'navy': '#1a237e', 'red': '#c62828',
+                'blue': '#1565c0', 'green': '#2e7d32', 'grey': '#616161', 'gray': '#616161',
+                'brown': '#5d4037', 'tan': '#d7ccc8', 'beige': '#f5f5dc', 'pink': '#f8bbd0',
+                'purple': '#7b1fa2', 'orange': '#ef6c00', 'yellow': '#f9a825', 'cream': '#fffdd0',
+                'gold': '#C9A227', 'silver': '#c0c0c0', 'burgundy': '#800020', 'olive': '#808000'
+            };
+            const lower = colorName.toLowerCase().split(' ')[0];
+            return colorMap[lower] || '#DDDDDD';
+        }
+    </script>
+</body>
+</html>

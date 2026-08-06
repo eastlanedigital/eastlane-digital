@@ -1,0 +1,469 @@
+/* ==========================
+   TABLETS (max-width: 1100px)
+========================== */
+
+@media (max-width: 1100px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: 120px;
+        gap: 50px;
+    }
+
+    .hero p {
+        margin: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-stats {
+        justify-content: center;
+    }
+
+    .hero-right {
+        margin-top: 30px;
+        height: auto;
+        min-height: 500px;
+    }
+
+    .laptop-card {
+        width: 90%;
+        max-width: 500px;
+    }
+
+    .phone-card {
+        width: 160px;
+        height: 330px;
+    }
+
+    .phone-left { left: 5%; }
+    .phone-right { right: 5%; }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .solution-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .demo-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+        margin: 0 auto;
+    }
+
+    .price-card.featured {
+        transform: scale(1);
+    }
+
+    .price-card.featured:hover {
+        transform: scale(1) translateY(-12px);
+    }
+
+    .testimonial-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
+    }
+
+    .contact-details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ceo-wrapper {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 50px;
+    }
+
+    .ceo-image-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    .ceo-content .ceo-quote {
+        padding-left: 0;
+        border-left: none;
+        border-top: 3px solid var(--primary);
+        padding-top: 20px;
+    }
+
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-wrapper {
+        grid-template-columns: 80px 1fr;
+    }
+
+    .analytics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .graph-area {
+        height: 250px;
+    }
+}
+
+/* ==========================
+   PHONES (max-width: 768px)
+========================== */
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 25px;
+        height: 75px;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: rgba(5, 8, 22, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+        padding: 80px 40px;
+        transition: right 0.4s ease;
+        border-left: 1px solid var(--border);
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links a {
+        font-size: 1.1rem;
+    }
+
+    .mobile-toggle {
+        display: flex;
+    }
+
+    .navbar .btn-primary {
+        display: none;
+    }
+
+    .hero {
+        padding: 100px 25px 60px;
+        min-height: auto;
+    }
+
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        padding: 16px 28px;
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: 25px;
+        margin-top: 40px;
+    }
+
+    .hero-right {
+        display: none;
+    }
+
+    section {
+        padding: 80px 25px;
+    }
+
+    .section-header {
+        margin-bottom: 50px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .stat-item {
+        padding: 20px 15px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .footer-about p {
+        max-width: 100%;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-sidebar {
+        display: none;
+    }
+
+    .analytics-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .analytics-card {
+        padding: 18px;
+    }
+
+    .analytics-card h2 {
+        font-size: 1.2rem;
+    }
+
+    .graph-area {
+        height: 200px;
+        padding: 20px;
+    }
+
+    .graph-bars {
+        gap: 10px;
+    }
+
+    .graph-bars span:nth-child(1) { height: 50px; }
+    .graph-bars span:nth-child(2) { height: 100px; }
+    .graph-bars span:nth-child(3) { height: 70px; }
+    .graph-bars span:nth-child(4) { height: 130px; }
+    .graph-bars span:nth-child(5) { height: 85px; }
+    .graph-bars span:nth-child(6) { height: 150px; }
+    .graph-bars span:nth-child(7) { height: 110px; }
+
+    .floating-whatsapp {
+        width: 55px;
+        height: 55px;
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .floating-whatsapp svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .faq-question {
+        font-size: 1rem;
+        padding: 20px;
+    }
+
+    .faq-answer {
+        padding: 0 20px 20px;
+    }
+
+    .price-card {
+        padding: 35px 25px;
+    }
+
+    .solution-card {
+        padding: 35px 25px;
+    }
+
+    .demo-image {
+        height: 250px;
+    }
+
+    .trust-badges {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .contact-detail-item {
+        padding: 15px 18px;
+    }
+
+    .ceo-image {
+        max-width: 320px;
+    }
+}
+
+/* ==========================
+   SMALL PHONES (max-width: 480px)
+========================== */
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .badge {
+        font-size: 0.75rem;
+        padding: 10px 16px;
+    }
+
+    .section-tag {
+        font-size: 0.75rem;
+        padding: 8px 14px;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .service-card, .feature-card, .testimonial, .price-card, .solution-card {
+        padding: 30px 20px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .analytics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .graph-area {
+        height: 180px;
+    }
+
+    .footer-grid {
+        gap: 30px;
+    }
+
+    footer {
+        padding: 60px 25px 30px;
+    }
+
+    .loader-logo span {
+        width: 70px;
+        height: 70px;
+        font-size: 1.5rem;
+    }
+
+    .loader-logo h2 {
+        font-size: 1.2rem;
+    }
+
+    .process-card {
+        padding: 30px 20px;
+    }
+
+    .process-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
+
+/* ==========================
+   LARGE SCREENS (min-width: 1600px)
+========================== */
+
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1400px;
+    }
+
+    section {
+        padding: 140px 10%;
+    }
+
+    .hero {
+        gap: 100px;
+    }
+
+    .laptop-card {
+        width: 620px;
+    }
+
+    .phone-card {
+        width: 210px;
+        height: 420px;
+    }
+}
+
+/* ==========================
+   LANDSCAPE MOBILE
+========================== */
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding-top: 100px;
+    }
+
+    .hero-right {
+        display: none;
+    }
+
+    .navbar {
+        height: 65px;
+    }
+}
+
+/* ==========================
+   REDUCED MOTION
+========================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}

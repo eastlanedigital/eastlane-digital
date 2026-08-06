@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover luxury fashion at Luxe Atelier. Premium clothing, shoes, accessories, and more.">
+    <meta name="keywords" content="luxury fashion, designer clothing, premium boutique, women's fashion, men's fashion, accessories">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Luxe Atelier | Premium Fashion Boutique">
+    <meta property="og:description" content="Where Elegance Meets Modernity">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1200&q=80">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Luxe Atelier | Premium Fashion Boutique">
+    <meta name="twitter:description" content="Where Elegance Meets Modernity">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1200&q=80">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ClothingStore",
+        "name": "Luxe Atelier",
+        "description": "Premium fashion boutique offering luxury clothing, shoes, and accessories",
+        "url": "https://luxe-atelier.com",
+        "telephone": "+1-555-123-4567",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "123 Fashion Avenue",
+            "addressLocality": "New York",
+            "addressRegion": "NY",
+            "postalCode": "10001",
+            "addressCountry": "US"
+        },
+        "openingHours": "Mo-Th 10:00-20:00, Fr-Sa 10:00-21:00, Su 11:00-18:00",
+        "priceRange": "$$$"
+    }
+    </script>
+
+    <title>Luxe Atelier | Premium Fashion Boutique</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+<base target="_blank">
+</head>
+<body>
+    <!-- Page Loader -->
+    <div class="page-loader" aria-hidden="true">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <div class="container nav-inner">
+            <a href="index.html" class="nav-logo" aria-label="Luxe Atelier Home">Luxe Atelier</a>
+
+            <ul class="nav-links" role="menubar">
+                <li role="none"><a href="index.html" class="nav-link active" role="menuitem">Home</a></li>
+                <li role="none"><a href="products.html" class="nav-link" role="menuitem">Shop</a></li>
+                <li role="none"><a href="products.html?gender=women" class="nav-link" role="menuitem">Women</a></li>
+                <li role="none"><a href="products.html?gender=men" class="nav-link" role="menuitem">Men</a></li>
+                <li role="none"><a href="products.html?category=accessories" class="nav-link" role="menuitem">Accessories</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="nav-btn search-toggle" aria-label="Search">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+                <a href="#" class="nav-btn" aria-label="Wishlist">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                </a>
+                <button class="nav-btn cart-toggle" aria-label="Shopping cart">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+                <a href="#" class="nav-btn" aria-label="Account">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </a>
+                <button class="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" role="dialog" aria-label="Mobile menu" aria-hidden="true">
+        <div class="mobile-menu-header">
+            <span class="nav-logo">Luxe Atelier</span>
+            <button class="mobile-menu-close" aria-label="Close menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <ul class="mobile-menu-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Shop All</a></li>
+            <li><a href="products.html?gender=women">Women</a></li>
+            <li><a href="products.html?gender=men">Men</a></li>
+            <li><a href="products.html?category=new">New Arrivals</a></li>
+            <li><a href="products.html?category=sale">Sale</a></li>
+        </ul>
+    </div>
+    <div class="mobile-overlay"></div>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" role="dialog" aria-label="Search" aria-hidden="true">
+        <button class="search-close" aria-label="Close search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <form class="search-form" action="products.html" method="get">
+            <input type="search" name="q" class="search-input" placeholder="Search products..." aria-label="Search products" autocomplete="off">
+        </form>
+    </div>
+
+    <!-- Cart Drawer -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-label="Shopping cart">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="cart-close" aria-label="Close cart">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <div class="cart-empty">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#777" stroke-width="1">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+                <p>Your cart is empty</p>
+                <a href="products.html" class="btn btn-outline">Continue Shopping</a>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-subtotal-row">
+                <span>Subtotal</span>
+                <span id="cart-subtotal">$0.00</span>
+            </div>
+            <p class="cart-note">Shipping and taxes calculated at checkout</p>
+            <button class="btn btn-dark cart-checkout-btn">Checkout</button>
+        </div>
+    </aside>
+
+    <!-- Hero Section -->
+    <section class="hero" aria-label="Hero">
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1920&q=80" alt="Luxury fashion collection" loading="eager">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <p class="hero-subtitle">New Collection 2026</p>
+            <h1 class="hero-title">Where Elegance Meets Modernity</h1>
+            <p class="hero-text">Discover our curated selection of premium fashion pieces, crafted with the finest materials and designed for the discerning individual.</p>
+            <div class="hero-buttons">
+                <a href="products.html" class="btn btn-primary">Shop Collection</a>
+                <a href="products.html?category=new" class="btn btn-secondary">New Arrivals</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Collections -->
+    <section class="section" aria-labelledby="collections-heading">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <p class="section-label">Explore</p>
+                <h2 id="collections-heading" class="section-title">Featured Collections</h2>
+            </div>
+            <div class="collections-grid" id="collections-grid">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals -->
+    <section class="section" style="background: var(--bg-white);" aria-labelledby="new-arrivals-heading">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <p class="section-label">Just In</p>
+                <h2 id="new-arrivals-heading" class="section-title">New Arrivals</h2>
+            </div>
+            <div class="products-grid" id="new-arrivals-grid">
+                <!-- Populated by JS -->
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="products.html" class="btn btn-outline">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Men's Collection -->
+    <section class="section" aria-labelledby="men-heading">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <p class="section-label">For Him</p>
+                <h2 id="men-heading" class="section-title">Men's Collection</h2>
+            </div>
+            <div class="products-grid" id="men-products-grid">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Women's Collection -->
+    <section class="section" style="background: var(--bg-white);" aria-labelledby="women-heading">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <p class="section-label">For Her</p>
+                <h2 id="women-heading" class="section-title">Women's Collection</h2>
+            </div>
+            <div class="products-grid" id="women-products-grid">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Accessories -->
+    <section class="section" aria-labelledby="accessories-heading">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <p class="section-label">Complete Your Look</p>
+                <h2 id="accessories-heading" class="section-title">Accessories</h2>
+            </div>
+            <div class="products-grid" id="accessories-grid">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Sellers -->
+    <section class="section" style="background: var(--bg-white);" aria-labelledby="bestsellers-heading">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <p class="section-label">Most Loved</p>
+                <h2 id="bestsellers-heading" class="section-title">Best Sellers</h2>
+            </div>
+            <div class="products-grid" id="bestsellers-grid">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Season Collection -->
+    <section class="section" aria-labelledby="season-heading">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <p class="section-label">This Season</p>
+                <h2 id="season-heading" class="section-title">Summer Collection</h2>
+            </div>
+            <div class="season-grid" id="season-grid">
+                <div class="season-item">
+                    <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=800&q=80" alt="Summer dress" loading="lazy">
+                    <div class="season-item-overlay">
+                        <h3>Summer Dresses</h3>
+                    </div>
+                </div>
+                <div class="season-item">
+                    <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=800&q=80" alt="Summer shirts" loading="lazy">
+                    <div class="season-item-overlay">
+                        <h3>Light Shirts</h3>
+                    </div>
+                </div>
+                <div class="season-item">
+                    <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=800&q=80" alt="Summer shoes" loading="lazy">
+                    <div class="season-item-overlay">
+                        <h3>Summer Shoes</h3>
+                    </div>
+                </div>
+                <div class="season-item">
+                    <img src="https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?w=800&q=80" alt="Summer accessories" loading="lazy">
+                    <div class="season-item-overlay">
+                        <h3>Accessories</h3>
+                    </div>
+                </div>
+                <div class="season-item">
+                    <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800&q=80" alt="Summer bags" loading="lazy">
+                    <div class="season-item-overlay">
+                        <h3>Bags</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promotional Banner -->
+    <section class="promo-banner" aria-label="Summer sale promotion">
+        <div class="container">
+            <div class="promo-content">
+                <p class="section-label" style="color: var(--color-gold);">Limited Time</p>
+                <h2 class="promo-title">Summer Sale</h2>
+                <p class="promo-text">Up to 40% off on selected summer styles. Refresh your wardrobe with our curated collection of warm-weather essentials.</p>
+                <a href="products.html?category=sale" class="btn btn-secondary">Shop the Sale</a>
+            </div>
+            <div class="promo-image">
+                <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=600&q=80" alt="Summer fashion" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews -->
+    <section class="section" style="background: var(--bg-white);" aria-labelledby="reviews-heading">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <p class="section-label">Testimonials</p>
+                <h2 id="reviews-heading" class="section-title">What Our Customers Say</h2>
+            </div>
+            <div class="reviews-grid" id="reviews-grid">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Gallery -->
+    <section class="section" aria-labelledby="instagram-heading">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <p class="section-label">@luxeatelier</p>
+                <h2 id="instagram-heading" class="section-title">Follow Us on Instagram</h2>
+            </div>
+            <div class="instagram-grid" id="instagram-grid">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter" aria-labelledby="newsletter-heading">
+        <div class="container">
+            <div class="newsletter-content animate-on-scroll">
+                <h2 id="newsletter-heading" class="newsletter-title">Join the Inner Circle</h2>
+                <p class="newsletter-text">Subscribe to receive exclusive offers, early access to new collections, and styling inspiration.</p>
+                <form class="newsletter-form" novalidate>
+                    <input type="email" placeholder="Enter your email" aria-label="Email address" required>
+                    <button type="submit" class="btn btn-dark">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3 class="footer-logo">Luxe Atelier</h3>
+                    <p>Where elegance meets modernity. Discover premium fashion crafted with care and designed for the discerning individual.</p>
+                    <div class="footer-social">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Collections</h4>
+                    <ul>
+                        <li><a href="products.html?gender=women">Women</a></li>
+                        <li><a href="products.html?gender=men">Men</a></li>
+                        <li><a href="products.html?category=accessories">Accessories</a></li>
+                        <li><a href="products.html?category=sale">Sale</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Store Hours</h4>
+                    <div class="footer-hours">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Luxe Atelier. All rights reserved.</p>
+                <p>Designed with passion for fashion.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="19" x2="12" y2="5"></line>
+            <polyline points="5 12 12 5 19 12"></polyline>
+        </svg>
+    </button>
+
+    <!-- Scripts -->
+    <script src="data/products.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/site.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        // Homepage-specific initialization
+        document.addEventListener('DOMContentLoaded', () => {
+            // Render collections
+            const collectionsGrid = document.getElementById('collections-grid');
+            if (collectionsGrid && STORE_CONFIG.collections) {
+                collectionsGrid.innerHTML = STORE_CONFIG.collections.map(col => `
+                    <a href="products.html?category=${col.id}" class="collection-card animate-on-scroll">
+                        <img src="${col.image}" alt="${col.name}" loading="lazy">
+                        <div class="collection-overlay">
+                            <h3 class="collection-name">${col.name}</h3>
+                        </div>
+                    </a>
+                `).join('');
+            }
+
+            // Render new arrivals
+            const newArrivalsGrid = document.getElementById('new-arrivals-grid');
+            if (newArrivalsGrid) {
+                const newArrivals = productManager.getNewArrivals(8);
+                productManager.renderProductGrid(newArrivals, 'new-arrivals-grid');
+            }
+
+            // Render men's products
+            const menGrid = document.getElementById('men-products-grid');
+            if (menGrid) {
+                const menProducts = productManager.getProductsByGender('men').slice(0, 4);
+                productManager.renderProductGrid(menProducts, 'men-products-grid');
+            }
+
+            // Render women's products
+            const womenGrid = document.getElementById('women-products-grid');
+            if (womenGrid) {
+                const womenProducts = productManager.getProductsByGender('women').slice(0, 4);
+                productManager.renderProductGrid(womenProducts, 'women-products-grid');
+            }
+
+            // Render accessories
+            const accessoriesGrid = document.getElementById('accessories-grid');
+            if (accessoriesGrid) {
+                const accessoryCategories = ['watches', 'bags', 'jewelry', 'sunglasses', 'belts', 'hats', 'perfumes'];
+                const accessories = productManager.getAllProducts().filter(p => accessoryCategories.includes(p.category)).slice(0, 4);
+                productManager.renderProductGrid(accessories, 'accessories-grid');
+            }
+
+            // Render best sellers
+            const bestsellersGrid = document.getElementById('bestsellers-grid');
+            if (bestsellersGrid) {
+                const bestSellers = productManager.getBestSellers(4);
+                productManager.renderProductGrid(bestSellers, 'bestsellers-grid');
+            }
+
+            // Render reviews
+            const reviewsGrid = document.getElementById('reviews-grid');
+            if (reviewsGrid && STORE_CONFIG.reviews) {
+                reviewsGrid.innerHTML = STORE_CONFIG.reviews.map(review => `
+                    <div class="review-card animate-on-scroll">
+                        <div class="review-header">
+                            <img src="${review.avatar}" alt="${review.name}" class="review-avatar" loading="lazy">
+                            <div class="review-meta">
+                                <h4>${review.name}</h4>
+                                ${review.verified ? '<span class="verified"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg> Verified Purchase</span>' : ''}
+                            </div>
+                        </div>
+                        <div class="product-rating">
+                            ${productManager.renderStars(review.rating)}
+                        </div>
+                        <p class="review-text">${review.text}</p>
+                        <p class="review-product">Purchased: ${review.product}</p>
+                    </div>
+                `).join('');
+            }
+
+            // Render Instagram
+            const instagramGrid = document.getElementById('instagram-grid');
+            if (instagramGrid && STORE_CONFIG.instagramImages) {
+                instagramGrid.innerHTML = STORE_CONFIG.instagramImages.map(img => `
+                    <a href="https://instagram.com/luxeatelier" target="_blank" rel="noopener" class="instagram-item animate-on-scroll">
+                        <img src="${img}" alt="Instagram post" loading="lazy">
+                        <div class="instagram-overlay">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </div>
+                    </a>
+                `).join('');
+            }
+        });
+
+        // Trigger animation observation for dynamically added elements
+        if (window.reobserveAnimations) {
+            window.reobserveAnimations();
+        }
+    </script>
+</body>
+</html>

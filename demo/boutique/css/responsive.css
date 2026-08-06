@@ -1,0 +1,321 @@
+/* ============================================
+   LUXE ATELIER - Responsive Stylesheet
+   ============================================ */
+
+/* Large Tablets */
+@media (max-width: 1200px) {
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .collections-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .collection-card:last-child:nth-child(odd) {
+        grid-column: span 2;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .product-detail {
+        gap: 2rem;
+    }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+
+    .gender-section {
+        grid-template-columns: 1fr;
+    }
+
+    .season-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .season-item:first-child {
+        grid-row: span 1;
+        aspect-ratio: 1;
+    }
+
+    .reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .instagram-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .promo-banner .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .promo-image {
+        max-width: 300px;
+    }
+
+    .products-page {
+        grid-template-columns: 1fr;
+    }
+
+    .filters-sidebar {
+        position: static;
+        display: none;
+    }
+
+    .filters-sidebar.show {
+        display: block;
+    }
+
+    .product-detail {
+        grid-template-columns: 1fr;
+    }
+
+    .product-gallery {
+        position: static;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    :root {
+        --container-padding: 16px;
+    }
+
+    .section {
+        padding: 4rem 0;
+    }
+
+    .hero {
+        min-height: 600px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .hero-overlay {
+        background: rgba(0,0,0,0.5);
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .collections-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .collection-card {
+        aspect-ratio: 1;
+    }
+
+    .collection-card:last-child:nth-child(odd) {
+        grid-column: span 1;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .instagram-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .cart-drawer {
+        width: 100%;
+    }
+
+    .product-actions .btn {
+        width: 100%;
+    }
+
+    .gender-card {
+        aspect-ratio: 3/4;
+    }
+
+    .season-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .season-item:first-child {
+        aspect-ratio: 4/3;
+    }
+
+    .products-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .nav-inner {
+        height: 64px;
+    }
+
+    .nav-scrolled .nav-inner {
+        height: 56px;
+    }
+
+    .nav-logo {
+        font-size: 1.2rem;
+    }
+
+    .hero {
+        min-height: 500px;
+    }
+
+    .btn {
+        padding: 0.875rem 1.75rem;
+        font-size: 0.8rem;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+
+    .product-image-wrapper {
+        margin-bottom: 0.75rem;
+    }
+
+    .product-name {
+        font-size: 0.85rem;
+    }
+
+    .current-price {
+        font-size: 0.9rem;
+    }
+
+    .wishlist-btn {
+        opacity: 1;
+        transform: none;
+        width: 32px;
+        height: 32px;
+    }
+
+    .quick-view-btn {
+        display: none;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .cart-notification {
+        left: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+    }
+
+    .back-to-top {
+        width: 40px;
+        height: 40px;
+        bottom: 1rem;
+        right: 1rem;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) {
+    .wishlist-btn {
+        opacity: 1;
+        transform: none;
+    }
+
+    .quick-view-btn {
+        display: none;
+    }
+
+    .product-image.secondary {
+        display: none;
+    }
+
+    .product-image.primary {
+        opacity: 1 !important;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    :root {
+        --color-primary: #000000;
+        --color-secondary: #333333;
+        --color-muted: #666666;
+        --color-border: #999999;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .main-nav,
+    .site-footer,
+    .cart-drawer,
+    .back-to-top,
+    .mobile-menu,
+    .mobile-overlay {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+}

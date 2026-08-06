@@ -1,0 +1,731 @@
+/* ============================================
+   MediCare Pharmacy - Responsive Stylesheet
+   Tablet, Mobile, and accessibility breakpoints
+   ============================================ */
+
+/* ============================================
+   Large Desktop (1440px+)
+   ============================================ */
+@media (min-width: 1440px) {
+    :root {
+        --container-padding: var(--space-8);
+    }
+}
+
+/* ============================================
+   Tablet (768px - 1023px)
+   ============================================ */
+@media (max-width: 1023px) {
+    :root {
+        --text-5xl: 2.5rem;
+        --text-4xl: 2rem;
+        --text-3xl: 1.625rem;
+        --container-padding: var(--space-5);
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: var(--space-10);
+        text-align: center;
+    }
+
+    .hero-content {
+        order: 1;
+    }
+
+    .hero-visual {
+        order: 0;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .hero-description {
+        margin: 0 auto var(--space-8);
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .hero-search-box {
+        max-width: 560px;
+        margin: 0 auto var(--space-10);
+    }
+
+    .hero-stats {
+        justify-content: center;
+    }
+
+    .hero-floating-card {
+        display: none;
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .prescription-wrapper {
+        grid-template-columns: 1fr;
+        gap: var(--space-10);
+    }
+
+    .prescription-header {
+        text-align: center;
+    }
+
+    .prescription-steps {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .prescription-form-wrapper {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .why-us-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .service-card-large {
+        grid-column: span 2;
+        grid-row: span 1;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .health-tips-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .testimonial-card {
+        flex: 0 0 calc(50% - var(--space-3));
+    }
+
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: var(--space-10);
+    }
+
+    .contact-info {
+        max-width: 600px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .contact-form-wrapper {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-8);
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+        max-width: 100%;
+    }
+
+    .all-products-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .products-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 300px;
+        max-width: 85vw;
+        z-index: calc(var(--z-drawer) + 1);
+        border-radius: 0;
+        transform: translateX(-100%);
+        transition: transform var(--transition-slow);
+        overflow-y: auto;
+    }
+
+    .products-sidebar.active {
+        transform: translateX(0);
+    }
+
+    .sidebar-close {
+        display: flex;
+    }
+
+    .mobile-filter-toggle {
+        display: inline-flex;
+    }
+
+    .all-products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ============================================
+   Mobile (max-width: 767px)
+   ============================================ */
+@media (max-width: 767px) {
+    :root {
+        --text-6xl: 2.5rem;
+        --text-5xl: 2rem;
+        --text-4xl: 1.75rem;
+        --text-3xl: 1.5rem;
+        --text-2xl: 1.25rem;
+        --header-height: 64px;
+        --header-height-scrolled: 56px;
+        --container-padding: var(--space-4);
+    }
+
+    html {
+        scroll-padding-top: calc(var(--header-height) + var(--space-4));
+    }
+
+    .section-header {
+        margin-bottom: var(--space-8);
+    }
+
+    .section-title {
+        font-size: var(--text-2xl);
+    }
+
+    .section-subtitle {
+        font-size: var(--text-base);
+    }
+
+    /* Navigation */
+    .nav-links {
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: var(--space-4);
+        gap: 0;
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform var(--transition-slow), opacity var(--transition-slow), visibility var(--transition-slow);
+        z-index: var(--z-sticky);
+        max-height: calc(100vh - var(--header-height));
+        overflow-y: auto;
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-link {
+        padding: var(--space-3) var(--space-4);
+        font-size: var(--text-base);
+        width: 100%;
+        text-align: left;
+        border-radius: var(--radius-lg);
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .mobile-menu-toggle.active .hamburger-line:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .mobile-menu-toggle.active .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-toggle.active .hamburger-line:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .nav-cta {
+        display: none;
+    }
+
+    /* Hero */
+    .hero {
+        padding-top: calc(var(--header-height) + var(--space-8));
+        padding-bottom: var(--space-16);
+    }
+
+    .hero-heading {
+        font-size: var(--text-4xl);
+    }
+
+    .hero-description {
+        font-size: var(--text-base);
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-search-wrapper {
+        flex-direction: column;
+        gap: var(--space-2);
+        padding: var(--space-3);
+    }
+
+    .hero-search-btn {
+        width: 100%;
+    }
+
+    .hero-search-tags {
+        justify-content: center;
+    }
+
+    .hero-stats {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--space-4);
+    }
+
+    .hero-stat-divider {
+        display: none;
+    }
+
+    .hero-stat {
+        align-items: center;
+        min-width: 80px;
+    }
+
+    .hero-visual {
+        max-width: 100%;
+    }
+
+    /* Categories */
+    .categories {
+        padding: var(--space-16) 0;
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
+    }
+
+    .category-card {
+        padding: var(--space-5) var(--space-4);
+    }
+
+    .category-card-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .category-card-icon svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .category-card-title {
+        font-size: var(--text-base);
+    }
+
+    /* Products */
+    .products {
+        padding: var(--space-16) 0;
+    }
+
+    .products-filter-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-tabs {
+        overflow-x: auto;
+        padding: var(--space-1);
+    }
+
+    .filter-sort {
+        justify-content: flex-end;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
+    }
+
+    .product-card-body {
+        padding: var(--space-4);
+    }
+
+    .product-card-name {
+        font-size: var(--text-sm);
+    }
+
+    .product-card-desc {
+        font-size: var(--text-xs);
+    }
+
+    .product-card-price {
+        font-size: var(--text-lg);
+    }
+
+    /* Prescription */
+    .prescription {
+        padding: var(--space-16) 0;
+    }
+
+    .prescription-form-wrapper {
+        padding: var(--space-5);
+    }
+
+    .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: var(--text-base);
+    }
+
+    /* Why Us */
+    .why-us {
+        padding: var(--space-16) 0;
+    }
+
+    .why-us-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-us-card {
+        padding: var(--space-6);
+    }
+
+    /* Services */
+    .services {
+        padding: var(--space-16) 0;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card-large {
+        grid-column: span 1;
+        grid-template-columns: 1fr;
+    }
+
+    .service-card-large .service-card-image {
+        aspect-ratio: 16 / 9;
+        height: auto;
+    }
+
+    .service-card-title {
+        font-size: var(--text-lg);
+    }
+
+    /* Health Tips */
+    .health-tips {
+        padding: var(--space-16) 0;
+    }
+
+    .health-tips-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Testimonials */
+    .testimonials {
+        padding: var(--space-16) 0;
+    }
+
+    .testimonial-card {
+        flex: 0 0 100%;
+        padding: var(--space-6);
+    }
+
+    .testimonials-nav {
+        margin-top: var(--space-6);
+    }
+
+    /* FAQ */
+    .faq {
+        padding: var(--space-16) 0;
+    }
+
+    .faq-question {
+        font-size: var(--text-base);
+        padding: var(--space-4) 0;
+    }
+
+    .faq-answer p {
+        font-size: var(--text-sm);
+    }
+
+    /* Contact */
+    .contact {
+        padding: var(--space-16) 0;
+    }
+
+    .contact-form-wrapper {
+        padding: var(--space-5);
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    /* Newsletter */
+    .newsletter {
+        padding: var(--space-12) 0;
+    }
+
+    .newsletter-title {
+        font-size: var(--text-2xl);
+    }
+
+    .newsletter-text {
+        font-size: var(--text-base);
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-btn {
+        width: 100%;
+    }
+
+    /* Footer */
+    .main-footer {
+        padding-top: var(--space-12);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+        text-align: center;
+    }
+
+    .footer-brand {
+        grid-column: span 1;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-payment {
+        flex-direction: column;
+        gap: var(--space-2);
+    }
+
+    /* Cart Drawer */
+    .cart-drawer {
+        max-width: 100%;
+    }
+
+    /* Search Overlay */
+    .search-container {
+        margin: 0 var(--space-4);
+        border-radius: var(--radius-xl);
+    }
+
+    .search-input-wrapper {
+        padding: var(--space-4);
+    }
+
+    .search-input {
+        font-size: var(--text-base);
+    }
+
+    /* Page Header */
+    .page-header {
+        padding-top: calc(var(--header-height) + var(--space-8));
+        padding-bottom: var(--space-8);
+    }
+
+    .page-header-title {
+        font-size: var(--text-3xl);
+    }
+
+    /* All Products */
+    .all-products {
+        padding: var(--space-8) 0 var(--space-16);
+    }
+
+    .all-products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
+    }
+
+    .products-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .products-sort {
+        justify-content: space-between;
+    }
+
+    /* Back to Top */
+    .back-to-top {
+        width: 44px;
+        height: 44px;
+        bottom: var(--space-4);
+        right: var(--space-4);
+    }
+}
+
+/* ============================================
+   Small Mobile (max-width: 480px)
+   ============================================ */
+@media (max-width: 480px) {
+    .categories-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-3);
+    }
+
+    .products-grid,
+    .all-products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-heading {
+        font-size: var(--text-3xl);
+    }
+
+    .section-title {
+        font-size: var(--text-xl);
+    }
+
+    .testimonial-card {
+        padding: var(--space-5);
+    }
+
+    .prescription-form-wrapper,
+    .contact-form-wrapper {
+        padding: var(--space-4);
+    }
+}
+
+/* ============================================
+   Reduced Motion
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* ============================================
+   High Contrast Mode
+   ============================================ */
+@media (prefers-contrast: high) {
+    :root {
+        --color-border: #9CA3AF;
+        --shadow-sm: none;
+        --shadow-md: none;
+        --shadow-lg: none;
+    }
+
+    .product-card,
+    .category-card,
+    .why-us-card,
+    .service-card,
+    .health-tip-card,
+    .testimonial-card,
+    .contact-card,
+    .prescription-form-wrapper,
+    .contact-form-wrapper {
+        border: 2px solid var(--color-text);
+    }
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+@media print {
+    .main-header,
+    .back-to-top,
+    .nav-actions,
+    .hero-visual,
+    .hero-search-box,
+    .hero-actions,
+    .newsletter,
+    .footer-social,
+    .footer-payment,
+    .cart-drawer,
+    .cart-overlay,
+    .search-overlay,
+    .mobile-menu-toggle,
+    .mobile-filter-toggle,
+    .products-sidebar,
+    .sidebar-overlay,
+    .testimonials-nav,
+    .products-load-more,
+    .products-pagination {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    .section-container {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .hero {
+        padding-top: var(--space-6);
+        background: none;
+    }
+
+    .hero-heading {
+        font-size: 24pt;
+    }
+
+    .product-card,
+    .category-card,
+    .why-us-card,
+    .service-card,
+    .health-tip-card,
+    .testimonial-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    a[href]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666;
+    }
+}

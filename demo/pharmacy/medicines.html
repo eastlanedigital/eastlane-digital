@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse all medicines and healthcare products at MediCare Pharmacy. Find vitamins, supplements, personal care items, and more.">
+    <meta name="keywords" content="pharmacy products, medicines, supplements, vitamins, healthcare store">
+    <meta name="author" content="MediCare Pharmacy">
+
+    <meta property="og:title" content="All Products - MediCare Pharmacy">
+    <meta property="og:description" content="Browse our complete catalog of healthcare products.">
+    <meta property="og:type" content="website">
+
+    <title>All Products - MediCare Pharmacy</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F48A;</text></svg>">
+</head>
+<body>
+    <!-- Page Loader -->
+    <div id="page-loader" class="page-loader" aria-hidden="true">
+        <div class="loader-spinner">
+            <svg viewBox="0 0 50 50" class="loader-svg">
+                <circle cx="25" cy="25" r="20" fill="none" stroke-width="4" class="loader-track"></circle>
+                <circle cx="25" cy="25" r="20" fill="none" stroke-width="4" class="loader-progress"></circle>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header id="main-header" class="main-header" role="banner">
+        <nav class="main-nav" role="navigation" aria-label="Main navigation">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo" aria-label="MediCare Pharmacy Home">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                            <path d="M12 5 12 19"/>
+                            <path d="M5 12 19 12"/>
+                        </svg>
+                    </div>
+                    <span class="logo-text">MediCare</span>
+                </a>
+
+                <div class="nav-links" id="nav-links">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="index.html#categories" class="nav-link">Categories</a>
+                    <a href="medicines.html" class="nav-link active">Products</a>
+                    <a href="index.html#prescription" class="nav-link">Prescription</a>
+                    <a href="index.html#services" class="nav-link">Services</a>
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </div>
+
+                <div class="nav-actions">
+                    <button class="nav-search-btn" id="nav-search-btn" aria-label="Search products" title="Search">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="m21 21-4.3-4.3"/>
+                        </svg>
+                    </button>
+
+                    <button class="nav-cart-btn" id="nav-cart-btn" aria-label="Shopping cart" title="Cart">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="8" cy="21" r="1"/>
+                            <circle cx="19" cy="21" r="1"/>
+                            <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+                        </svg>
+                        <span class="cart-badge" id="cart-badge" aria-label="Cart items">0</span>
+                    </button>
+
+                    <a href="index.html#contact" class="nav-cta">Order Now</a>
+
+                    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay" role="dialog" aria-label="Search products" aria-hidden="true">
+        <div class="search-container">
+            <button class="search-close" id="search-close" aria-label="Close search">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 6 6 18"/>
+                    <path d="m6 6 12 12"/>
+                </svg>
+            </button>
+            <div class="search-input-wrapper">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.3-4.3"/>
+                </svg>
+                <input type="text" class="search-input" id="search-input" placeholder="Search medicines, supplements, health products..." autocomplete="off" aria-label="Search products">
+            </div>
+            <div class="search-results" id="search-results" role="listbox" aria-label="Search results"></div>
+        </div>
+    </div>
+
+    <!-- Cart Drawer -->
+    <div class="cart-overlay" id="cart-overlay" aria-hidden="true"></div>
+    <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-label="Shopping cart" aria-hidden="true">
+        <div class="cart-header">
+            <h2 class="cart-title">Your Cart</h2>
+            <button class="cart-close" id="cart-close" aria-label="Close cart">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 6 6 18"/>
+                    <path d="m6 6 12 12"/>
+                </svg>
+            </button>
+        </div>
+        <div class="cart-items" id="cart-items" role="list" aria-label="Cart items">
+            <div class="cart-empty" id="cart-empty">
+                <div class="cart-empty-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="8" cy="21" r="1"/>
+                        <circle cx="19" cy="21" r="1"/>
+                        <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+                    </svg>
+                </div>
+                <p class="cart-empty-text">Your cart is empty</p>
+                <p class="cart-empty-subtext">Add some medicines to get started</p>
+                <a href="#products" class="cart-empty-btn" id="cart-empty-btn">Browse Products</a>
+            </div>
+        </div>
+        <div class="cart-footer" id="cart-footer" style="display: none;">
+            <div class="cart-subtotal">
+                <span>Subtotal</span>
+                <span class="cart-subtotal-amount" id="cart-subtotal">UGX 0</span>
+            </div>
+            <div class="cart-shipping">
+                <span>Shipping</span>
+                <span class="cart-shipping-free">Free</span>
+            </div>
+            <div class="cart-total">
+                <span>Total</span>
+                <span class="cart-total-amount" id="cart-total">UGX 0</span>
+            </div>
+            <button class="cart-checkout-btn" id="cart-checkout-btn">Proceed to Checkout</button>
+            <p class="cart-note">Free shipping on orders over UGX 50,000</p>
+        </div>
+    </aside>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header" aria-label="Page header">
+            <div class="page-header-container">
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <a href="index.html">Home</a>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                    <span>All Products</span>
+                </nav>
+                <h1 class="page-header-title">All Products</h1>
+                <p class="page-header-subtitle">Browse our complete catalog of healthcare products</p>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section class="all-products" aria-label="All products">
+            <div class="section-container">
+                <div class="all-products-layout">
+                    <!-- Sidebar Filters -->
+                    <aside class="products-sidebar" id="products-sidebar" aria-label="Product filters">
+                        <div class="sidebar-header">
+                            <h3>Filters</h3>
+                            <button class="sidebar-close" id="sidebar-close" aria-label="Close filters">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 6 6 18"/>
+                                    <path d="m6 6 12 12"/>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="sidebar-section">
+                            <h4 class="sidebar-section-title">Categories</h4>
+                            <div class="sidebar-categories" id="sidebar-categories">
+                                <!-- Rendered by JS -->
+                            </div>
+                        </div>
+
+                        <div class="sidebar-section">
+                            <h4 class="sidebar-section-title">Price Range</h4>
+                            <div class="price-range">
+                                <div class="price-inputs">
+                                    <div class="price-input-group">
+                                        <label for="price-min">Min</label>
+                                        <input type="number" id="price-min" class="price-input" placeholder="0" min="0">
+                                    </div>
+                                    <span class="price-separator">-</span>
+                                    <div class="price-input-group">
+                                        <label for="price-max">Max</label>
+                                        <input type="number" id="price-max" class="price-input" placeholder="500" min="0">
+                                    </div>
+                                </div>
+                                <button class="price-apply-btn" id="price-apply">Apply</button>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-section">
+                            <h4 class="sidebar-section-title">Availability</h4>
+                            <div class="sidebar-checkboxes">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" class="checkbox-input" id="filter-in-stock" checked>
+                                    <span class="checkbox-custom"></span>
+                                    <span>In Stock</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" class="checkbox-input" id="filter-prescription">
+                                    <span class="checkbox-custom"></span>
+                                    <span>Prescription Required</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" class="checkbox-input" id="filter-top-rated">
+                                    <span class="checkbox-custom"></span>
+                                    <span>Top Rated (4.5+)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button class="sidebar-reset-btn" id="sidebar-reset">Reset All Filters</button>
+                    </aside>
+
+                    <!-- Mobile Filter Toggle -->
+                    <button class="mobile-filter-toggle" id="mobile-filter-toggle" aria-label="Open filters">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="4" x2="20" y1="6" y2="6"/>
+                            <line x1="4" x2="20" y1="12" y2="12"/>
+                            <line x1="4" x2="20" y1="18" y2="18"/>
+                        </svg>
+                        <span>Filters</span>
+                    </button>
+
+                    <!-- Products Grid -->
+                    <div class="products-main">
+                        <div class="products-toolbar">
+                            <p class="products-count" id="products-count">Showing all products</p>
+                            <div class="products-sort">
+                                <label for="all-sort-select" class="sort-label">Sort by:</label>
+                                <select id="all-sort-select" class="sort-select" aria-label="Sort products">
+                                    <option value="featured">Featured</option>
+                                    <option value="price-low">Price: Low to High</option>
+                                    <option value="price-high">Price: High to Low</option>
+                                    <option value="rating">Top Rated</option>
+                                    <option value="name">Name: A-Z</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="products-grid all-products-grid" id="all-products-grid" role="list" aria-label="All products">
+                            <!-- Products rendered by JS -->
+                        </div>
+
+                        <div class="products-pagination" id="products-pagination" role="navigation" aria-label="Product pagination">
+                            <!-- Pagination rendered by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <div class="logo-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                                <path d="M12 5 12 19"/>
+                                <path d="M5 12 19 12"/>
+                            </svg>
+                        </div>
+                        <span class="logo-text">MediCare</span>
+                    </a>
+                    <p class="footer-about">Your trusted partner for all healthcare needs. Genuine medicines, fast delivery, and expert advice.</p>
+                    <div class="footer-social" id="footer-social"></div>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about" onclick="event.preventDefault(); alert('Coming soon!');">About Us</a></li>
+                        <li><a href="#careers" onclick="event.preventDefault(); alert('Coming soon!');">Careers</a></li>
+                        <li><a href="#press" onclick="event.preventDefault(); alert('Coming soon!');">Press</a></li>
+                        <li><a href="#blog" onclick="event.preventDefault(); alert('Coming soon!');">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#services">Online Consultation</a></li>
+                        <li><a href="index.html#services">Lab Tests</a></li>
+                        <li><a href="index.html#services">Health Subscriptions</a></li>
+                        <li><a href="index.html#services">Express Delivery</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#faq">FAQ</a></li>
+                        <li><a href="index.html#contact">Contact Us</a></li>
+                        <li><a href="#shipping" onclick="event.preventDefault(); alert('Coming soon!');">Shipping Info</a></li>
+                        <li><a href="#returns" onclick="event.preventDefault(); alert('Coming soon!');">Returns Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4 class="footer-column-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#privacy" onclick="event.preventDefault(); alert('Coming soon!');">Privacy Policy</a></li>
+                        <li><a href="#terms" onclick="event.preventDefault(); alert('Coming soon!');">Terms of Service</a></li>
+                        <li><a href="#hipaa" onclick="event.preventDefault(); alert('Coming soon!');">HIPAA Compliance</a></li>
+                        <li><a href="#licenses" onclick="event.preventDefault(); alert('Coming soon!');">Licenses</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright" id="footer-copyright">MediCare Pharmacy. All rights reserved.</p>
+                <div class="footer-payment">
+                    <span class="payment-label">We accept:</span>
+                    <div class="payment-icons">
+                        <svg viewBox="0 0 48 32" class="payment-icon"><rect width="48" height="32" rx="4" fill="#1A1F71"/><text x="24" y="20" text-anchor="middle" fill="white" font-size="10" font-weight="bold" font-family="Inter">VISA</text></svg>
+                        <svg viewBox="0 0 48 32" class="payment-icon"><rect width="48" height="32" rx="4" fill="#EB001B"/><circle cx="18" cy="16" r="10" fill="#EB001B"/><circle cx="30" cy="16" r="10" fill="#F79E1B" opacity="0.8"/></svg>
+                        <svg viewBox="0 0 48 32" class="payment-icon"><rect width="48" height="32" rx="4" fill="#016FD0"/><text x="24" y="20" text-anchor="middle" fill="white" font-size="9" font-weight="bold" font-family="Inter">AMEX</text></svg>
+                        <svg viewBox="0 0 48 32" class="payment-icon"><rect width="48" height="32" rx="4" fill="#5F6368"/><text x="24" y="20" text-anchor="middle" fill="white" font-size="9" font-weight="bold" font-family="Inter">PayPal</text></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top" title="Back to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m18 15-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true">
+        <div class="toast-icon" id="toast-icon"></div>
+        <span class="toast-message" id="toast-message"></span>
+    </div>
+
+    <!-- Scripts -->
+    <script src="data/medicines.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/site.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
